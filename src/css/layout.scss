@@ -1,0 +1,44 @@
+// Layout styles
+.page-container {
+  padding: 1rem;
+  min-height: calc(100vh - 50px);
+}
+
+.content-wrapper {
+  transition: all 0.3s ease;
+  margin-left: 260px;
+  
+  &.expanded {
+    margin-left: 0;
+  }
+}
+
+// Header styles
+.header-container {
+  height: 64px;
+  padding: 0 1rem;
+  background: var(--q-primary);
+  color: white;
+}
+
+// Navigation styles
+.nav-drawer {
+  background: var(--bg-secondary);
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+// Tab bar styles
+.tab-container {
+  background: #f5f5f5;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  
+  .q-tab {
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 0.875rem;
+    
+    &--active {
+      background: rgba(0, 0, 0, 0.05);
+    }
+  }
+}

@@ -1,0 +1,1 @@
+[{"path":"/","label":"Inicio","icon":"home","children":[]},{"path":"/purchases","label":"Compras","icon":"shopping_cart","children":[{"path":"/nueva-compra","label":"Nueva Compra","icon":"shopping_cart","children":[]}]},{"path":"/roles","label":"Roles","icon":"admin_panel_settings","children":[{"path":"/nuevo-rol","label":"Nuevo Rol","icon":"account_circle","children":[]}]},]

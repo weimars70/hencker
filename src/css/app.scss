@@ -1,0 +1,18 @@
+// App Global Styles
+@import './themes.scss';
+@import './layout.scss';
+
+// Custom color classes
+.bg-gradient-primary {
+  background: linear-gradient(45deg, var(--q-primary), var(--q-secondary));
+}
+
+// Dark mode styles
+.body--dark {
+  --primary: #1de9b6;
+  --secondary: #64ffda;
+  --dark: #121212;
+  
+  background: var(--dark);
+  color: #fff;
+}
