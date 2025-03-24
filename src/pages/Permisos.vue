@@ -148,14 +148,14 @@ const saveChanges = async () => {
     await menuService.saveMenuRol(-1,menuItems.value)
     $q.notify({
       color: 'positive',
-      message: 'Talla guardada exitosamente',
+      message: 'Menu opciones guardado exitosamente',
       icon: 'check',
       position: 'center'
     });
   } catch (error) {
     $q.notify({
       color: 'negative',
-      message: `Error al guardar la talla: ${error.message}`,
+      message: `Error al guardar permisos: ${error.message}`,
       icon: 'error',
       position: 'center'
     });

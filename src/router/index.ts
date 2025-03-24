@@ -44,10 +44,6 @@ function getIconForRoute(path: string): string {
   const icons: Record<string, string> = {
     '/': 'home',
     '/colors': 'palette',
-    '/sizes': 'straighten',
-    '/item-groups': 'category',
-    '/purchases': 'shopping_cart',
-    '/roles': 'admin_panel_settings',
     '/permisos': 'shopping_cart',
     '/usuarios': 'users',
   };

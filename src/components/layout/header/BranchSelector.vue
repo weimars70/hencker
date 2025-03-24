@@ -5,7 +5,7 @@
     dense
     outlined
     class="branch-select q-mr-md"
-    label="Sucursal"
+    label="Empresa"
     bg-color="white"
   />
 </template>
@@ -16,8 +16,8 @@ import { ref } from 'vue';
 const selectedBranch = ref('main');
 const branches = [
   { label: 'Principal', value: 'main' },
-  { label: 'Sucursal 1', value: 'branch1' },
-  { label: 'Sucursal 2', value: 'branch2' }
+  { label: 'Empresa 1', value: 'branch1' },
+  { label: 'Empresa 2', value: 'branch2' }
 ];
 </script>
 

@@ -11,7 +11,7 @@
       />
       
       <q-toolbar-title class="text-weight-bold">
-        Sistema ERP
+        HENCKER
       </q-toolbar-title>
 
       <branch-selector />

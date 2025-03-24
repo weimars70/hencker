@@ -177,7 +177,7 @@ const isGridView = ref(false);
 const columnFilters = ref<Record<string, string>>({});
 const filter = ref('');
 
-const title = computed(() => props.title || 'Gestión de Roles');
+const title = computed(() => props.title || 'Grupos Usuarios');
 const addButtonLabel = computed(() => props.addButtonLabel || 'Nuevo Rol');
 
 const toggleView = () => {

@@ -18,21 +18,6 @@ const routes: RouteRecordRaw[] = [
         component: () => import('../pages/IndexPage.vue')
       },
       {
-        path: 'colors',
-        name: 'colors',
-        component: () => import('../features/colors/pages/ColorPage.vue')
-      },
-      {
-        path: 'sizes',
-        name: 'sizes',
-        component: () => import('../features/sizes/pages/SizePage.vue')
-      },
-      {
-        path: 'item-groups',
-        name: 'item-groups',
-        component: () => import('../features/groups/pages/GroupPage.vue')
-      },
-      {
         path: 'purchases',
         name: 'purchases',
         component: () => import('../pages/Purchases.vue')

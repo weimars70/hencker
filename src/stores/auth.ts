@@ -10,9 +10,10 @@ interface User {
 
 interface AuthState {
   user: User | null;
-  sucursal: number | null ;
+  empresa: number | null;
   token: string | null;
   rol: number | null;
+  permisos: any | null;
   branch: string;
 }
 
@@ -22,24 +23,27 @@ interface LoginResponse {
   token: string;
   user: User;
   rol: number;
-  sucursal: number;
+  empresa: number;
+  permisos: any;
 }
 
 export const useAuthStore = defineStore('auth', {
   state: (): AuthState => ({
     user: null,
     token: null,
-    sucursal: null,
+    Empresa: null,
     rol: null,
+    permisos: null,
     branch: 'main'
   }),
 
   getters: {
-    isAuthenticated: (state) => !!state.token
+    isAuthenticated: (state) => !!state.token,
+    getPermisos: (state) => state.permisos
   },
 
   actions: {
-    async login(credentials: { username: string; password: string, sucursal: number, rol: number }) {
+    async login(credentials: { username: string; password: string }) {
       const data = {
         username: credentials.username,
         password: btoa(credentials.password)
@@ -53,16 +57,17 @@ export const useAuthStore = defineStore('auth', {
        
         const jsonData = JSON.parse(JSON.stringify(response.data.message));
         
-        console.log('response login response:', jsonData);
-        // Store token and user data
+        // Store all user data
         this.token = jsonData.token;
         this.user = jsonData.user;
-        this.sucursal = jsonData.sucursal;
+        this.empresa = jsonData.empresa;
         this.rol = jsonData.rol;
-        
+        this.permisos = jsonData.permisos;
 
         // Set token in axios default headers
-        api.defaults.headers.common['Authorization'] = `Bearer ${this.token}`;
+        if (this.token) {
+          api.defaults.headers.common.Authorization = 'Bearer ' + this.token;
+        }
 
         return true;
       } catch (error: any) {
@@ -78,17 +83,18 @@ export const useAuthStore = defineStore('auth', {
     logout() {
       this.user = null;
       this.token = null;
-      this.sucursal = null;
+      this.empresa = null;
       this.rol = null;
+      this.permisos = null;
       this.branch = 'main';
       
       // Remove token from axios headers
-      delete api.defaults.headers.common['Authorization'];
+      delete api.defaults.headers.common.Authorization;
     }
   },
 
   persist: {
     key: 'auth-store',
-    paths: ['user', 'token', 'branch', 'sucursal', 'rol']
+    paths: ['user', 'token', 'branch', 'empresa', 'rol', 'permisos']
   }
 });

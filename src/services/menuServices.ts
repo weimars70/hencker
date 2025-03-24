@@ -5,9 +5,10 @@ export const menuService = {
   async getMenuItems(): Promise<MenuNode[]> {
     try {
       const response = await api.get('/plantilla');
-      if (!response.data || !response.data.length) {
+    
+      /*if (!response.data || !response.data.length) {
         return this.getDefaultMenu();
-      }
+      }*/
 
       // Safely parse the permisos data
       let menuData;
@@ -15,13 +16,15 @@ export const menuService = {
         menuData = typeof response.data[0].permisos === 'string' 
           ? JSON.parse(response.data[0].permisos)
           : response.data[0].permisos;
+          menuData = JSON.parse(menuData);
       } catch (parseError) {
         console.error('Error parsing menu data:', parseError);
-        return this.getDefaultMenu();
+        return [];
       }
 
       // Ensure we return a valid array
-      return Array.isArray(menuData) ? menuData : this.getDefaultMenu();
+      //return Array.isArray(menuData) ? menuData : this.getDefaultMenu();
+      return menuData;
       
     } catch (error) {
       console.error('Error loading menu:', error);
@@ -33,11 +36,7 @@ export const menuService = {
     return [
       { path: '/', label: 'Inicio', icon: 'home', children: [] },
       { path: '/colors', label: 'Colores', icon: 'palette', children: [] },
-      { path: '/sizes', label: 'Tallas', icon: 'straighten', children: [] },
-      { path: '/item-groups', label: 'Grupos', icon: 'category', children: [] },
-      { path: '/purchases', label: 'Compras', icon: 'shopping_cart', children: [] },
-      { path: '/roles', label: 'Roles', icon: 'admin_panel_settings', children: [] },
-      { path: '/permisos', label: 'Permisos', icon: 'admin_panel_settings', children: [] }
+      { path: '/permisos', label: 'Opciones Menu', icon: 'admin_panel_settings', children: [] }
     ];
   },
 
@@ -80,7 +79,8 @@ export const menuService = {
   },
 
   async saveMenuRol(rol: number, permisos: MenuNode[]): Promise<void> {
-    if (!rol || rol <= 0) {
+    console.log(':::permisos:::', rol);
+    if (!rol ) {
       throw new Error('Invalid role ID');
     }
 

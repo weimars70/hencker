@@ -29,7 +29,7 @@ export default {
     logout: 'Sair'
   },
   home: {
-    welcome: 'Bem-vindo ao Sistema ERP',
+    welcome: 'Bem-vindo ao HENCKER',
     selectOption: 'Selecione uma opção para começar',
     colorManagement: 'Gestão de cores para produtos',
     sizeManagement: 'Administração de tamanhos',

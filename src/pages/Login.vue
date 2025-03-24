@@ -41,7 +41,7 @@
               </q-img>
             </div>
           </div>
-          <div class="text-h5 text-weight-bold text-primary q-mb-md">Sistema ERP</div>
+          <div class="text-h5 text-weight-bold text-primary q-mb-md">HENCKER</div>
           <div class="text-subtitle2 text-grey-7">Iniciar Sesión</div>
         </q-card-section>
 
@@ -85,12 +85,12 @@
             <q-select
               v-model="selectedBranch"
               :options="branches"
-              label="Sucursal"
+              label="Empresa"
               outlined
               dense
               emit-value
               map-options
-              :rules="[val => !!val || 'Sucursal es requerida']"
+              :rules="[val => !!val || 'Empresa es requerida']"
               :disable="loading"
             >
               <template v-slot:prepend>
@@ -139,8 +139,8 @@ const selectedBranch = ref('main');
 
 const branches = [
   { label: 'Principal', value: 'main' },
-  { label: 'Sucursal 1', value: 'branch1' },
-  { label: 'Sucursal 2', value: 'branch2' }
+  { label: 'Empresa 1', value: 'branch1' },
+  { label: 'Empresa 2', value: 'branch2' }
 ];
 
 async function onSubmit() {
@@ -149,7 +149,7 @@ async function onSubmit() {
     
     await auth.login({
       username: form.value.username, password: form.value.password,
-      sucursal: 0,
+      empresa: 0,
       rol: 0
     });
     

@@ -4,7 +4,7 @@
       <!-- Header Section with Integrated Search -->
       <div class="page-header">
         <div class="row items-center justify-between full-width q-mb-md">
-          <div class="text-h5 text-weight-bold text-primary q-my-none">Gestión de Roles</div>
+          <div class="text-h5 text-weight-bold text-primary q-my-none">Grupos Usuarios</div>
           <div class="row items-center q-gutter-sm header-actions">
             <!-- Highlighted Search Input -->
             <q-input

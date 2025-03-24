@@ -49,7 +49,7 @@ export class RoleApi implements RoleRepository {
 
   async deleteRole(codigo: string): Promise<void> {
     try {
-      await api.delete(`/roles/${codigo}`);
+      const rpta = await api.delete(`/roles/${codigo}`);
     } catch (error) {
       console.error('Error deleting role:', error);
       throw new Error('No se pudo eliminar el rol');

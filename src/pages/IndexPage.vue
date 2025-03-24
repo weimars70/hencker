@@ -2,7 +2,7 @@
   <q-page class="dashboard-page q-pa-md">
     <div class="welcome-section text-center q-mb-md">
       <div class="text-h4 text-weight-bold q-mb-sm text-primary">
-        Bienvenido al Sistema ERP
+        Bienvenido a HENCKER
       </div>
       <div class="text-subtitle1 text-grey-7">Seleccione una opción para comenzar</div>
     </div>
@@ -42,34 +42,10 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   { 
-    path: '/colors', 
-    label: 'Colores', 
-    icon: 'palette',
-    description: 'Gestión de colores para productos'
-  },
-  { 
-    path: '/sizes', 
-    label: 'Tallas', 
-    icon: 'straighten',
-    description: 'Control de tallas y medidas'
-  },
-  { 
-    path: '/item-groups', 
-    label: 'Grupos', 
-    icon: 'category',
-    description: 'Clasificación de productos'
-  },
-  { 
-    path: '/purchases', 
-    label: 'Compras', 
-    icon: 'shopping_cart',
-    description: 'Gestión de compras e inventario'
-  },
-  { 
     path: '/roles', 
-    label: 'Roles', 
+    label: 'Grupos Usuarios', 
     icon: 'admin_panel_settings',
-    description: 'Administración de roles'
+    description: 'Administración de grupos usuarios'
   },
   { 
     path: '/permisos', 
@@ -82,7 +58,13 @@ const menuItems: MenuItem[] = [
     label: 'Usuarios', 
     icon: 'people',
     description: 'Administración de usuarios'
-  }
+  },
+  { 
+    path: '/roles-permisos', 
+    label: 'Permisos Grupos Usuarios', 
+    icon: 'category',
+    description: 'Permisos Grupos Usuarios'
+  },
 ];
 
 // Get the tab management function from the parent
