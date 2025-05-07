@@ -27,7 +27,8 @@ export function useTreeLogic() {
   const loadTreeData = async () => {
     try {
       const response = await menuRepository.getMenuItems();
-      console.log('Raw tree data:', response);
+      console.log('Permisos plantilla', response);
+      /*const permisos_rol = await menuRepository.getMenuRol();
       
       const parsedData = typeof response === 'string' ? JSON.parse(response) : response;
       treeData.value = processNodes(parsedData);
@@ -35,7 +36,7 @@ export function useTreeLogic() {
       console.log('Processed tree data:', treeData.value);
       
       expandAllNodes(treeData.value);
-      await nextTick();
+      await nextTick();*/
     } catch (error) {
       console.error('Error loading tree data:', error);
       $q.notify({ 
